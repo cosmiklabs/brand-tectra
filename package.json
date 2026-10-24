@@ -1,0 +1,15 @@
+{
+  "name": "@cosmiklabs/brand-tectra",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Tectra family of the Cosmik brand: tokens, the Latch marks and the Tectra guide, built on a pinned cosmiklabs/brand release.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
