@@ -1,9 +1,25 @@
 # Tectra theme validation
 
 The last all-kit browser and integrity results, from when Tectra lived in `cosmiklabs/brand`, are recorded in
-[reference validation](https://github.com/cosmiklabs/brand/blob/v0.8.0/specimens/validation.md). The 23 October 2026 run
+[reference validation](https://github.com/cosmiklabs/brand/blob/v0.9.1/specimens/validation.md). The 23 October 2026 run
 supersedes the historical browser-execution blocker below. Approval and supplied
 assets are described in the [family guide](README.md).
+
+## 0.2.1 — 24 October 2026
+
+Foundation re-vendored from `cosmiklabs/brand` v0.9.1
+(48afb82b1edd5f9a7ce01eedbd52b5e3484c3c69) with its `vendor.mjs`; the manifest moved
+to the shared `brand` and `distribution` shape. Run on macOS with Node.js 24.22.0:
+
+- `npm run build`, `node scripts/build.mjs --check` from the release commit and
+  `npm run check` pass: `vendor.mjs verify vendor/brand` (36 files), `family.mjs
+  check .` (contract, `extends`, outputs and 120 contrast pairs) and 31 tests,
+  including syncing a release of this repository into a scratch consumer and
+  verifying both layers with `--release`.
+- Generated tokens differ from 0.2.0 only in the version, the provenance header and
+  the corrected `proposals` text. The ten SVGs are byte-identical. No CSS, font or
+  specimen byte changed, so the board was not re-rendered; the split-time rendering
+  below still applies.
 
 ## Repository split — 24 October 2026
 

@@ -2,7 +2,7 @@
 
 This repository is the Tectra family of the Cosmik brand: its tokens, the Latch
 marks, the offline review board and this guide. It builds on the Cosmik foundation
-from [`cosmiklabs/brand`](https://github.com/cosmiklabs/brand) **v0.8.0**, vendored
+from [`cosmiklabs/brand`](https://github.com/cosmiklabs/brand) **v0.9.1**, vendored
 unchanged at `vendor/brand/` and pinned by `vendor/brand/brand.lock.json` (tag,
 commit and SHA-256 of every file). The family's tokens are generated and checked by
 the vendored `vendor/brand/scripts/family.mjs`, so the family contract, baseline
@@ -54,8 +54,8 @@ Follow the shared [interface](vendor/brand/guide/interface.md), [motion](vendor/
 ## Deliverables and pending assets
 
 - [Offline review board](specimen.html): two-mode visual direction and illustrative applications.
-- [Component reference](https://github.com/cosmiklabs/brand/blob/v0.8.0/specimens/components.html) in `cosmiklabs/brand`: the shared controls Tectra inherits. Load `tokens/tectra.css` and apply `data-family="tectra"` to inspect them in Tectra.
-- Generated CSS, JSON, DTCG and Rust under [tokens/](tokens/); use the [consumer guide](https://github.com/cosmiklabs/brand/blob/v0.8.0/kits/README.md) for integration.
+- [Component reference](https://github.com/cosmiklabs/brand/blob/v0.9.1/specimens/components.html) in `cosmiklabs/brand`: the shared controls Tectra inherits. Load `tokens/tectra.css` and apply `data-family="tectra"` to inspect them in Tectra.
+- Generated CSS, JSON, DTCG and Rust under [tokens/](tokens/); use the [consumer guide](https://github.com/cosmiklabs/brand/blob/v0.9.1/kits/README.md) for integration.
 - [Validation record](validation.md).
 
 The symbol and supplied horizontal lockup are approved for integration. Platform icons, banners, identity animation and an optical small-size redraw remain separate future deliverables. Generate canonical variants with `node scripts/build-assets.mjs` (or `npm run build`); Inter's existing font notice continues to apply.
@@ -64,23 +64,47 @@ Tectra remains experimental; a brand kit does not certify API stability, host co
 
 ## Consume this kit
 
-Pin a commit or release tag of this repository and resolve every file through
-[asset-manifest.json](asset-manifest.json): it lists each deliverable with its
-SHA-256, role and status, including every file under `vendor/brand/`, so a
-consumer gets the Cosmik foundation layer (baseline tokens, controls, Inter, IBM
-Plex Mono and their notices) through this repository. Its `brand` section names
-the foundation release, and `entry_points.browser_stylesheets` gives the browser
-load order: the baseline `cosmik.css`, then `tokens/tectra.css`, then the optional
-`controls.css`, with `data-family="tectra"` on the scope. Copy the files you use
-with their paths, verify their hashes against the manifest from the same commit,
-and keep the font licence notices and [LICENSE.md](LICENSE.md). Never edit the
-copies; take changes from a new revision of this repository.
+Products (the Tectra app, `website-tectra`, or a Cosmik surface showing Tectra) sync
+a release of this repository with the brand vendor tool it carries. Check out a
+`vX.Y.Z` tag of this repository, clean and exactly at the tag, then, in the
+consumer:
+
+```sh
+node <brand-tectra checkout>/vendor/brand/scripts/vendor.mjs sync --from <brand-tectra checkout> --into vendor/brand-tectra
+node vendor/brand-tectra/vendor/brand/scripts/vendor.mjs verify vendor/brand-tectra
+node vendor/brand-tectra/vendor/brand/scripts/vendor.mjs verify vendor/brand-tectra --release <brand-tectra checkout>
+```
+
+`sync` copies every file under `distribution` in [asset-manifest.json](asset-manifest.json)
+after checking its SHA-256, and writes `vendor/brand-tectra/brand-tectra.lock.json`
+(package, repository, tag, commit and every file's hash). The set includes the
+Cosmik foundation this family was built and checked against, unchanged under
+`vendor/brand-tectra/vendor/brand/` with its own `brand.lock.json`, so one
+`verify` checks both layers and names any changed, missing or extra file in either.
+Run it in CI; `--release` also proves the lock against the tag. Do not sync
+`cosmiklabs/brand` separately beside it.
+
+Load the stylesheets in this order and put `data-family="tectra"` on the scope:
+
+```html
+<link rel="stylesheet" href="vendor/brand-tectra/vendor/brand/kits/cosmik/tokens/cosmik.css">
+<link rel="stylesheet" href="vendor/brand-tectra/tokens/tectra.css">
+<link rel="stylesheet" href="vendor/brand-tectra/vendor/brand/kits/cosmik/components/controls.css">
+```
+
+`controls.css` is optional. Fonts are under `vendor/brand-tectra/vendor/brand/fonts/`
+with their notices in `fonts/licenses/`; the marks are under
+`vendor/brand-tectra/assets/`. `entry_points` in the manifest names each canonical
+file, and the identity sections give each deliverable's role and status. Keep
+[LICENSE.md](LICENSE.md) and the font notices. Never edit the synced copies; take
+changes from a new release of this repository by syncing again.
 
 ## Working on the kit
 
 Requires Node.js 22 or later; the scripts use Node.js built-ins only. Read
 [AGENTS.md](AGENTS.md) first. Edit `tokens/family.json` and `assets/latch.source.json`,
-never their generated outputs, and never edit `vendor/brand/`.
+never their generated outputs, and never edit `vendor/brand/`. The build derives the
+manifest's `brand` and `distribution` sections from the lock and the files.
 
 ```sh
 npm run build                     # verify vendor/brand, build tokens and marks, refresh manifest hashes

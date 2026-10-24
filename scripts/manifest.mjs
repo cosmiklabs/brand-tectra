@@ -2,11 +2,14 @@
  *
  *   node scripts/manifest.mjs              fail on any problem
  *   node scripts/manifest.mjs --update     refresh generated and editable hashes, and rewrite
- *                                          `brand` and `vendor` from vendor/brand/brand.lock.json
+ *                                          `brand` and `distribution` from their sources
  *
- * Every `{ path, sha256 }` object anywhere in the manifest is a deliverable. Consumers sync from that
- * set, so it must be complete: tokens/, assets/ and vendor/brand/ are inventoried, and the vendored
- * entries must equal the lock. A vendored file is never blessed here; vendor.mjs verify proves it.
+ * Every `{ path, sha256 }` object outside `distribution` is one of this family's deliverables, with
+ * its role and status. `distribution` is what consumers sync with vendor.mjs: every one of those
+ * deliverables plus every file under vendor/brand/, including its lock, so a consumer gets and
+ * verifies both layers. It is derived, never hand-edited: the build writes it, and the check fails
+ * when it differs from the manifest's own entries, the lock or the bytes. tokens/, assets/ and
+ * vendor/brand/ are inventoried. A vendored file is never blessed here; vendor.mjs verify proves it.
  * Node.js only; deterministic and offline. */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,43 +18,28 @@ import { fileURLToPath } from 'node:url';
 
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const VENDOR_DIR = 'vendor/brand';
-const LOCK = `${VENDOR_DIR}/brand.lock.json`;
+export const LOCK = `${VENDOR_DIR}/brand.lock.json`;
 const INVENTORIED = ['tokens', 'assets', VENDOR_DIR];
 const sha256 = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const portable = p => typeof p === 'string' && p.length > 0 && !p.includes('\\') && !p.includes(':') && !p.includes('\0') && !p.startsWith('/') && p.split('/').every(part => part && part !== '.' && part !== '..');
-const FONT_WEIGHTS = { Regular: 400, Medium: 500, SemiBold: 600 };
 
-/** The role a vendored file plays for a consumer, from its path in the brand release. */
-export function vendorRole(file) {
-  const font = file.match(/^fonts\/(web|desktop)\/(Inter|IBMPlexMono)-(\w+)\.(woff2|ttf)$/);
-  if (font) return { kind: `${font[1]}-font`, family: font[2] === 'IBMPlexMono' ? 'IBM Plex Mono' : 'Inter', weight: FONT_WEIGHTS[font[3]], format: font[4], license_file: `${VENDOR_DIR}/fonts/licenses/${font[2] === 'IBMPlexMono' ? 'IBM-Plex' : 'Inter'}-OFL.txt` };
-  if (file.startsWith('fonts/licenses/')) return { kind: 'font-license' };
-  const token = file.match(/^kits\/cosmik\/tokens\/(source\.json|cosmik\.(css|json|tokens\.json)|cosmik_tokens\.rs)$/);
-  if (token) return { kind: 'tokens', kit: 'cosmik', format: { 'source.json': 'source', 'cosmik.css': 'css', 'cosmik.json': 'json', 'cosmik.tokens.json': 'dtcg', 'cosmik_tokens.rs': 'rust' }[token[1]] };
-  if (file === 'kits/cosmik/components/controls.css') return { kind: 'controls' };
-  if (file.startsWith('scripts/')) return { kind: 'tooling' };
-  if (file.startsWith('guide/')) return { kind: 'guide' };
-  if (file === 'LICENSE.md') return { kind: 'license' };
-  if (file === 'package.json') return { kind: 'release-metadata' };
-  return { kind: 'foundation' };
+/** The `brand` reference to the vendored foundation, and its files as distribution entries, from the lock. */
+export function foundation(directory = root) {
+  const bytes = fs.readFileSync(path.join(directory, LOCK));
+  const lock = JSON.parse(bytes);
+  return {
+    brand: { repository: lock.repository, tag: lock.tag, commit: lock.commit, directory: VENDOR_DIR, lock: LOCK },
+    files: [{ path: LOCK, sha256: sha256(bytes) }, ...Object.keys(lock.files).map(file => ({ path: `${VENDOR_DIR}/${file}`, sha256: lock.files[file] }))],
+  };
 }
 
-/** `brand` and `vendor` sections derived entirely from the lock, so they cannot drift from it. */
-export function lockSections(directory = root) {
-  const lockBytes = fs.readFileSync(path.join(directory, LOCK));
-  const lock = JSON.parse(lockBytes);
-  const brand = {
-    repository: lock.repository,
-    tag: lock.tag,
-    commit: lock.commit,
-    lock: LOCK,
-    release: `https://github.com/${lock.repository}/tree/${lock.tag}`,
+/** The distribution a manifest implies: its own entries' recorded hashes plus the foundation's. */
+export function distributionFor(own, foundationFiles) {
+  const files = [...own.map(e => ({ path: e.path, sha256: e.sha256 })), ...foundationFiles].sort((a, b) => (a.path < b.path ? -1 : 1));
+  return {
+    description: 'Every file a consumer syncs from a release of this repository with vendor/brand/scripts/vendor.mjs sync, with its SHA-256: the Tectra tokens, marks, guide and licence, and the Cosmik foundation under vendor/brand/ unchanged with its lock. `vendor.mjs verify` checks both layers.',
+    files,
   };
-  const files = [{ path: LOCK, role: { kind: 'vendor-lock' }, status: `records ${lock.repository} ${lock.tag}`, sha256: sha256(lockBytes) }];
-  for (const file of Object.keys(lock.files).sort()) {
-    files.push({ path: `${VENDOR_DIR}/${file}`, role: { ...vendorRole(file), layer: 'foundation' }, status: `vendored from ${lock.repository} ${lock.tag}; do not edit`, sha256: lock.files[file] });
-  }
-  return { brand, vendor: { directory: VENDOR_DIR, description: `The Cosmik foundation layer, copied unchanged from ${lock.repository} ${lock.tag} with vendor.mjs sync. Consumers that take Tectra from this repository get the baseline tokens, controls, fonts and their notices here.`, files } };
 }
 
 /** Lists every problem; with `update`, first refreshes generated/editable hashes and the lock-derived sections. */
@@ -60,12 +48,12 @@ export function verifyManifest(directory = root, { update = false } = {}) {
   const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
   const problems = [];
   let derived;
-  try { derived = lockSections(directory); }
+  try { derived = foundation(directory); }
   catch (error) { return { files: 0, problems: [`${LOCK}: ${error.message}`] }; }
-  if (update) Object.assign(manifest, derived);
-  else for (const key of ['brand', 'vendor']) {
-    if (JSON.stringify(manifest[key]) !== JSON.stringify(derived[key])) problems.push(`${key} differs from ${LOCK}; run npm run build`);
-  }
+  if (update) manifest.brand = derived.brand;
+  else if (JSON.stringify(manifest.brand) !== JSON.stringify(derived.brand)) problems.push(`brand differs from ${LOCK}; run npm run build`);
+  if (update) delete manifest.vendor;
+  else if ('vendor' in manifest) problems.push('vendor is replaced by brand and distribution; run npm run build');
 
   const entries = [];
   const walk = node => {
@@ -75,7 +63,8 @@ export function verifyManifest(directory = root, { update = false } = {}) {
       Object.values(node).forEach(walk);
     }
   };
-  walk(manifest);
+  const { distribution, ...described } = manifest;
+  walk(described);
   const listed = new Set();
   const realRoot = fs.realpathSync(directory);
   for (const entry of entries) {
@@ -83,6 +72,7 @@ export function verifyManifest(directory = root, { update = false } = {}) {
     if (!portable(p)) { problems.push(`invalid repository-relative path: ${String(p)}`); continue; }
     if (listed.has(p)) problems.push(`duplicate file entry: ${p}`);
     listed.add(p);
+    if (p.startsWith(`${VENDOR_DIR}/`)) problems.push(`vendored file listed outside distribution: ${p}`);
     if (!entry.role || typeof entry.role.kind !== 'string') problems.push(`missing role: ${p}`);
     if (typeof entry.status !== 'string' || !entry.status) problems.push(`missing status: ${p}`);
     const full = path.join(directory, p);
@@ -90,7 +80,7 @@ export function verifyManifest(directory = root, { update = false } = {}) {
     if (!fs.realpathSync(full).startsWith(realRoot + path.sep)) { problems.push(`file escapes repository: ${p}`); continue; }
     const bytes = fs.readFileSync(full);
     const actual = sha256(bytes);
-    const refreshable = !p.startsWith(`${VENDOR_DIR}/`) && (entry.generated_by || entry.editable === true);
+    const refreshable = entry.generated_by || entry.editable === true;
     if (entry.generated_by !== undefined && !fs.existsSync(path.join(directory, entry.generated_by))) problems.push(`missing generator ${entry.generated_by}: ${p}`);
     if (update && refreshable) entry.sha256 = actual;
     else if (!/^[a-f0-9]{64}$/.test(entry.sha256 ?? '')) problems.push(`invalid or missing SHA-256: ${p}`);
@@ -100,6 +90,17 @@ export function verifyManifest(directory = root, { update = false } = {}) {
       if (JSON.stringify(actualViewBox) !== JSON.stringify(entry.viewBox)) problems.push(`SVG viewBox differs from manifest: ${p}`);
     }
   }
+  // The foundation's bytes must be the locked bytes; vendor.mjs verify reports the detail.
+  for (const { path: p, sha256: hash } of derived.files) {
+    listed.add(p);
+    const full = path.join(directory, p);
+    if (!fs.existsSync(full) || !fs.statSync(full).isFile()) problems.push(`missing vendored file: ${p}`);
+    else if (sha256(fs.readFileSync(full)) !== hash) problems.push(`vendored file differs from ${LOCK}: ${p}`);
+  }
+  const expected = distributionFor(entries.filter(e => portable(e.path) && !e.path.startsWith(`${VENDOR_DIR}/`)), derived.files);
+  if (update) manifest.distribution = expected;
+  else if (JSON.stringify(distribution) !== JSON.stringify(expected)) problems.push('distribution differs from the manifest entries and the lock; run npm run build');
+
   const points = [];
   const leaves = node => { if (typeof node === 'string') points.push(node); else if (node && typeof node === 'object') Object.values(node).forEach(leaves); };
   leaves(manifest.entry_points);
@@ -119,7 +120,7 @@ export function verifyManifest(directory = root, { update = false } = {}) {
   INVENTORIED.forEach(inventory);
   // Do not partially bless generated output when another input is damaged.
   if (update && !problems.length) fs.writeFileSync(file, JSON.stringify(manifest, null, 2) + '\n');
-  return { files: entries.length, entry_points: points.length, problems };
+  return { files: entries.length, distributed: expected.files.length, entry_points: points.length, problems };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -130,5 +131,5 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   if (result.problems.length) {
     console.error(`asset-manifest.json: ${result.problems.length} problem(s).`);
     process.exitCode = 1;
-  } else console.log(`asset-manifest.json lists ${result.files} files and ${result.entry_points} entry points; every hash matches.`);
+  } else console.log(`asset-manifest.json lists ${result.files} files, ${result.entry_points} entry points and a distribution of ${result.distributed} files; every hash matches.`);
 }
