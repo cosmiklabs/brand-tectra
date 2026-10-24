@@ -1,9 +1,33 @@
 # Tectra theme validation
 
-The current all-kit browser and integrity results are recorded in
-[reference validation](../../specimens/validation.md). The 23 October 2026 run
+The last all-kit browser and integrity results, from when Tectra lived in `cosmiklabs/brand`, are recorded in
+[reference validation](https://github.com/cosmiklabs/brand/blob/v0.8.0/specimens/validation.md). The 23 October 2026 run
 supersedes the historical browser-execution blocker below. Approval and supplied
 assets are described in the [family guide](README.md).
+
+## Repository split — 24 October 2026
+
+Split from `cosmiklabs/brand` at v0.8.0 with the foundation vendored from tag v0.8.0
+(e416514a291fb71844280f7cf1e2759d195b7a4d). No mark, palette or token value changed.
+
+- `vendor.mjs verify vendor/brand` passes for 36 files, and with `--release` against a
+  local `cosmiklabs/brand` checkout, proving the lock against the tag.
+- `family.mjs check .` passes: contract, `extends`, generated outputs and 120 contrast
+  pairs. Regenerated tokens differ from v0.7.0 only in the provenance header line of
+  `tectra.css`, `tectra.tokens.json` and `tectra_tokens.rs`; `tectra.json` is
+  byte-identical. The ten regenerated SVGs are byte-identical.
+- 29 tests pass: the ported accessibility, asset and family-contract cases, plus
+  vendored-lock, manifest and reference-path tests.
+- Rendered `specimen.html` from a file URL in Chrome with the page in dark and light
+  at 1280 and 390 CSS px. All four declared font faces (Inter 400/500/600, IBM Plex
+  Mono 400) loaded from `vendor/brand/fonts/web/`, both Latch images loaded, there was
+  no horizontal overflow and no console or request error. The screenshots were
+  inspected; no broken style, missing font or missing image was found.
+
+The board-level browser regressions that `cosmiklabs/brand` ran (200% text, text
+spacing, 768/320 px, forced colours) are not ported to this repository and were not
+re-run here; the 23 October results below and in the reference validation stand as
+the last run. Actual browser zoom and assistive technology remain manual checks.
 
 ## Historical source review — 17 October 2026
 
