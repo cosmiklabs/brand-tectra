@@ -1,0 +1,4 @@
+# Local visual-review captures and temporary browser profiles.
+.local/
+.DS_Store
+node_modules/
