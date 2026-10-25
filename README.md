@@ -2,7 +2,7 @@
 
 This repository is the Tectra family of the Cosmik brand: its tokens, the Latch
 marks, the offline review board and this guide. It builds on the Cosmik foundation
-from [`cosmiklabs/brand`](https://github.com/cosmiklabs/brand) **v0.12.2**, vendored
+from [`cosmiklabs/brand`](https://github.com/cosmiklabs/brand) **v0.13.0**, vendored
 unchanged at `vendor/brand/` and pinned by `vendor/brand/brand.lock.json` (tag,
 commit and SHA-256 of every file). The family's tokens are generated and checked by
 the vendored `vendor/brand/scripts/family.mjs`, so the family contract, baseline
@@ -39,6 +39,8 @@ Follow the shared [voice and organisation wording guidance](vendor/brand/guide/v
 
 Consume semantic values from [the family tokens](tokens/family.json), never copied hex values. Light and dark roles are complete after generation. Teal marks focus, primary actions and selected emphasis; it does not mean success. Status uses words and structure. The family inherits neutral status roles; it does not invent approval, warning or error colour semantics.
 
+Glass (the shared `glass`, `glass-border` and `glass-muted` roles) is for controls floating over the user's work, such as viewport toolbars and the menus opened from them; panels, rails, dialogs and reading content stay solid. Tectra's dark glass is its own dark surface at 84 % with a mineral hairline; its light glass keeps the baseline white tint with a mineral hairline and darker muted text. The tint never recolours the work behind it beyond the shared blur and saturation.
+
 Inter serves both headings and reading/interface text. IBM Plex Mono serves short dimensions, identifiers and technical labels, not paragraphs. No new font is required. Preserve existing font notices. Spacing, controls, radii, breakpoints and motion remain the baseline's.
 
 ## Imagery and examples
@@ -54,8 +56,8 @@ Follow the shared [interface](vendor/brand/guide/interface.md), [motion](vendor/
 ## Deliverables and pending assets
 
 - [Offline review board](specimen.html): two-mode visual direction and illustrative applications.
-- [Component reference](https://github.com/cosmiklabs/brand/blob/v0.12.2/specimens/components.html) in `cosmiklabs/brand`: the shared controls Tectra inherits. Load `tokens/tectra.css` and apply `data-family="tectra"` to inspect them in Tectra.
-- Generated CSS, JSON, DTCG and Rust under [tokens/](tokens/); use the [consumer guide](https://github.com/cosmiklabs/brand/blob/v0.12.2/kits/README.md) for integration.
+- [Component reference](https://github.com/cosmiklabs/brand/blob/v0.13.0/specimens/components.html) in `cosmiklabs/brand`: the shared controls Tectra inherits. Load `tokens/tectra.css` and apply `data-family="tectra"` to inspect them in Tectra.
+- Generated CSS, JSON, DTCG and Rust under [tokens/](tokens/); use the [consumer guide](https://github.com/cosmiklabs/brand/blob/v0.13.0/kits/README.md) for integration.
 - [Validation record](validation.md).
 
 The symbol and supplied horizontal lockup are approved for integration. Platform icons, banners, identity animation and an optical small-size redraw remain separate future deliverables. Generate canonical variants with `node scripts/build-assets.mjs` (or `npm run build`); Inter's existing font notice continues to apply.

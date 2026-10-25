@@ -1,9 +1,9 @@
 {
   "name": "Cosmik · Tectra",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "status": "Approved — 17 October 2026; angle-only Latch approved",
   "family": "tectra",
-  "extends": "Cosmik baseline 0.7.0",
+  "extends": "Cosmik baseline 0.8.0",
   "extensionRoles": [
     "accent"
   ],
@@ -28,6 +28,9 @@
     "paper-shade": "#EFEEE9",
     "scrim-dark": "#000000B8",
     "scrim-light": "#0000007A",
+    "glass-dark": "#121212D6",
+    "glass-light": "#FFFFFFD6",
+    "muted-glass-light": "#595959",
     "tectra-dark-bg": "#0F1719",
     "tectra-dark-surface": "#172125",
     "tectra-dark-raised": "#233034",
@@ -85,7 +88,11 @@
     "tectra-light-status-fg": "#142925",
     "tectra-light-status-bg": "#E0EAE7",
     "tectra-light-status-border": "#657F78",
-    "tectra-light-accent": "#126B5E"
+    "tectra-light-accent": "#126B5E",
+    "tectra-dark-glass": "#172125D6",
+    "tectra-dark-glass-border": "#CDDAD6",
+    "tectra-light-glass-border": "#22342F",
+    "tectra-light-glass-muted": "#455D57"
   },
   "semantic": {
     "dark": {
@@ -125,6 +132,9 @@
       "ornament-text": "#414141",
       "media-placeholder": "#111111",
       "scrim": "#000000B8",
+      "glass": "#172125D6",
+      "glass-border": "#CDDAD6",
+      "glass-muted": "#ADC1BE",
       "accent": "#71D6C3"
     },
     "light": {
@@ -164,6 +174,9 @@
       "ornament-text": "#C6C5C0",
       "media-placeholder": "#E8E7E3",
       "scrim": "#0000007A",
+      "glass": "#FFFFFFD6",
+      "glass-border": "#22342F",
+      "glass-muted": "#455D57",
       "accent": "#126B5E"
     }
   },
@@ -205,6 +218,9 @@
       "ornament-text": "graphite",
       "media-placeholder": "media-dark",
       "scrim": "scrim-dark",
+      "glass": "tectra-dark-glass",
+      "glass-border": "tectra-dark-glass-border",
+      "glass-muted": "tectra-dark-muted",
       "accent": "tectra-dark-accent"
     },
     "light": {
@@ -244,6 +260,9 @@
       "ornament-text": "rule-light",
       "media-placeholder": "light-soft",
       "scrim": "scrim-light",
+      "glass": "glass-light",
+      "glass-border": "tectra-light-glass-border",
+      "glass-muted": "tectra-light-glass-muted",
       "accent": "tectra-light-accent"
     }
   },
@@ -360,6 +379,10 @@
     "narrow": "380px"
   },
   "elevation": {},
+  "glass": {
+    "blur": "12px",
+    "saturation": 1.2
+  },
   "native": {
     "description": "Values for non-browser consumers (desktop, game UI, design tools). Lengths are logical px at a 16 px root; letterSpacing is a fraction of the font size; layout.line is a measure in characters; easing is cubic-bezier control points [x1, y1, x2, y2]; colours give hex, straight-alpha sRGB floats [r, g, b, a] and linear-light floats.",
     "rootPx": 16,
@@ -453,6 +476,21 @@
         "hex": "#0000007A",
         "srgb": [0, 0, 0, 0.478431],
         "linear": [0, 0, 0, 0.478431]
+      },
+      "glass-dark": {
+        "hex": "#121212D6",
+        "srgb": [0.070588, 0.070588, 0.070588, 0.839216],
+        "linear": [0.006049, 0.006049, 0.006049, 0.839216]
+      },
+      "glass-light": {
+        "hex": "#FFFFFFD6",
+        "srgb": [1, 1, 1, 0.839216],
+        "linear": [1, 1, 1, 0.839216]
+      },
+      "muted-glass-light": {
+        "hex": "#595959",
+        "srgb": [0.34902, 0.34902, 0.34902, 1],
+        "linear": [0.099899, 0.099899, 0.099899, 1]
       },
       "tectra-dark-bg": {
         "hex": "#0F1719",
@@ -743,6 +781,26 @@
         "hex": "#126B5E",
         "srgb": [0.070588, 0.419608, 0.368627, 1],
         "linear": [0.006049, 0.147027, 0.111932, 1]
+      },
+      "tectra-dark-glass": {
+        "hex": "#172125D6",
+        "srgb": [0.090196, 0.129412, 0.145098, 0.839216],
+        "linear": [0.008568, 0.015209, 0.0185, 0.839216]
+      },
+      "tectra-dark-glass-border": {
+        "hex": "#CDDAD6",
+        "srgb": [0.803922, 0.854902, 0.839216, 1],
+        "linear": [0.610496, 0.701102, 0.672443, 1]
+      },
+      "tectra-light-glass-border": {
+        "hex": "#22342F",
+        "srgb": [0.133333, 0.203922, 0.184314, 1],
+        "linear": [0.015996, 0.03434, 0.028426, 1]
+      },
+      "tectra-light-glass-muted": {
+        "hex": "#455D57",
+        "srgb": [0.270588, 0.364706, 0.341176, 1],
+        "linear": [0.059511, 0.109462, 0.095307, 1]
       }
     },
     "semantic": {
@@ -926,6 +984,21 @@
           "hex": "#000000B8",
           "srgb": [0, 0, 0, 0.721569],
           "linear": [0, 0, 0, 0.721569]
+        },
+        "glass": {
+          "hex": "#172125D6",
+          "srgb": [0.090196, 0.129412, 0.145098, 0.839216],
+          "linear": [0.008568, 0.015209, 0.0185, 0.839216]
+        },
+        "glass-border": {
+          "hex": "#CDDAD6",
+          "srgb": [0.803922, 0.854902, 0.839216, 1],
+          "linear": [0.610496, 0.701102, 0.672443, 1]
+        },
+        "glass-muted": {
+          "hex": "#ADC1BE",
+          "srgb": [0.678431, 0.756863, 0.745098, 1],
+          "linear": [0.417885, 0.533276, 0.514918, 1]
         },
         "accent": {
           "hex": "#71D6C3",
@@ -1114,6 +1187,21 @@
           "srgb": [0, 0, 0, 0.478431],
           "linear": [0, 0, 0, 0.478431]
         },
+        "glass": {
+          "hex": "#FFFFFFD6",
+          "srgb": [1, 1, 1, 0.839216],
+          "linear": [1, 1, 1, 0.839216]
+        },
+        "glass-border": {
+          "hex": "#22342F",
+          "srgb": [0.133333, 0.203922, 0.184314, 1],
+          "linear": [0.015996, 0.03434, 0.028426, 1]
+        },
+        "glass-muted": {
+          "hex": "#455D57",
+          "srgb": [0.270588, 0.364706, 0.341176, 1],
+          "linear": [0.059511, 0.109462, 0.095307, 1]
+        },
         "accent": {
           "hex": "#126B5E",
           "srgb": [0.070588, 0.419608, 0.368627, 1],
@@ -1262,6 +1350,10 @@
       "durationMs": 140,
       "reducedDurationMs": 0,
       "easing": [0, 0, 0.58, 1]
+    },
+    "glass": {
+      "blurPx": 12,
+      "saturation": 1.2
     }
   }
 }

@@ -3,6 +3,24 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.3.0 · 25 October 2026
+
+- **Foundation `cosmiklabs/brand` v0.13.0** (commit
+  `9985a274113c74bdf8b80d5011f9045634cfd31e`), synced with its `vendor.mjs`. It
+  adds glass roles (`glass`, `glass-border`, `glass-muted`), baseline-only glass
+  blur and saturation tokens, glass contrast checks over any backdrop and opt-in
+  glass controls (`c-glass`, `c-toolbar--glass`, `c-button--glass`,
+  `c-segmented--glass`, `c-select--glass`). The baseline token version is now
+  0.8.0, so `extends` is `"Cosmik baseline 0.8.0"`. See the foundation's changelog.
+- **Tectra glass roles.** The baseline's neutral glass would sit grey among
+  Tectra's mineral surfaces, so the family sets its own: dark glass is the Tectra
+  dark surface `#172125` at 84 % with a `#CDDAD6` hairline and the Tectra dark
+  muted text; light glass keeps the baseline's white tint with a `#22342F`
+  hairline and a `#455D57` muted text (the Tectra light muted `#4D6761` is too
+  light over glass on black, 4.21:1). Over any backdrop: dark text 8.81:1, muted
+  5.22:1, boundary 3.08:1; light text 10.52:1, muted 4.89:1, boundary 3.18:1.
+- No other token value or mark changes.
+
 ## 0.2.6 · 25 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.12.2** (commit

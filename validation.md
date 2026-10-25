@@ -1,9 +1,26 @@
 # Tectra theme validation
 
 The last all-kit browser and integrity results, from when Tectra lived in `cosmiklabs/brand`, are recorded in
-[reference validation](https://github.com/cosmiklabs/brand/blob/v0.12.2/specimens/validation.md). The 23 October 2026 run
+[reference validation](https://github.com/cosmiklabs/brand/blob/v0.13.0/specimens/validation.md). The 23 October 2026 run
 supersedes the historical browser-execution blocker below. Approval and supplied
 assets are described in the [family guide](README.md).
+
+## 0.3.0 — 25 October 2026
+
+Foundation re-vendored from `cosmiklabs/brand` v0.13.0
+(9985a274113c74bdf8b80d5011f9045634cfd31e), with Tectra glass roles. Run on macOS
+with Node.js 24.22.0: `npm run build`, `node scripts/build.mjs --check` from the
+release commit and `npm run check` pass (`vendor.mjs verify vendor/brand`,
+`family.mjs check .` with 136 contrast pairs including the 16 glass pairs, 31
+tests); `vendor.mjs verify vendor/brand --release` against the v0.13.0 checkout
+passes. Glass over any of 4,913 backdrops: dark text 8.81:1, muted 5.22:1, focus
+5.67:1, boundary 3.08:1; light text 10.52:1, muted 4.89:1, focus 4.39:1, boundary
+3.18:1. The foundation's component reference was rendered with `tokens/tectra.css`
+and `data-family="tectra"` at 1280 px in both themes and its glass row inspected:
+the toolbar, buttons, select, segmented control and hint read clearly over white,
+black, saturated colours, stripes and a checker, and the dark glass matches the
+mineral surfaces. The review board does not load the controls layer, so it was not
+re-rendered. Generated tokens otherwise differ only in the version and provenance.
 
 ## 0.2.6 — 25 October 2026
 
