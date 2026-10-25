@@ -3,6 +3,15 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.2.6 · 25 October 2026
+
+- **Foundation `cosmiklabs/brand` v0.12.2** (commit
+  `91ecddeab47f9380a6e6727b3c0611a3073ad520`), synced with its `vendor.mjs`. Its
+  controls apply hover treatments only under `(hover: hover)`, so a tap on a touch
+  screen no longer leaves a control looking hovered. See the foundation's changelog.
+- No Tectra token value or mark changes. Generated tokens differ only in the
+  version and the provenance header.
+
 ## 0.2.5 · 25 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.12.1** (commit
