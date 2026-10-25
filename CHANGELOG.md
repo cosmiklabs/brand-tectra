@@ -3,6 +3,19 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.2.4 · 25 October 2026
+
+- **Foundation `cosmiklabs/brand` v0.12.0** (commit
+  `5c62fc7e1bd012a89061142d87ad64947ae6edd9`), synced with its `vendor.mjs`. Its
+  shared controls add `c-toolbar`, `c-button--quiet`, `c-button--icon`, pressed
+  toggles (`c-button[aria-pressed]`) and `c-segmented`: a bordered toolbar surface,
+  square icon-only buttons at the dense or touch target, and one-of-a-few choices
+  whose options share one width. Selection uses the selected roles plus a drawn
+  bar. See the foundation's changelog.
+- No Tectra token value or mark changes. Generated tokens differ only in the
+  version and the provenance header; the baseline token version is still 0.7.0, so
+  `extends` is unchanged.
+
 ## 0.2.3 · 24 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.11.0** (commit
