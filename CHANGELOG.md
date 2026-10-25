@@ -3,6 +3,15 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.2.5 · 25 October 2026
+
+- **Foundation `cosmiklabs/brand` v0.12.1** (commit
+  `71fcd97f6342090f7b189e333a04a94af0d32d02`), synced with its `vendor.mjs`. It fixes 0.12.0's `c-segmented`, whose
+  options collapsed below their labels in a shrink-to-fit container, and lets
+  `c-toolbar` wrap rather than overflow. See the foundation's changelog.
+- No Tectra token value or mark changes. Generated tokens differ only in the
+  version and the provenance header.
+
 ## 0.2.4 · 25 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.12.0** (commit

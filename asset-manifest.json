@@ -1,14 +1,14 @@
 {
   "name": "Tectra brand kit",
   "package": "@cosmiklabs/brand-tectra",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "date": "2026-10-25",
   "system_status": "Tectra family and angle-only Latch approved (owner, 2026-10-17); builds on the Cosmik baseline from cosmiklabs/brand",
   "license": "LICENSE.md",
   "brand": {
     "repository": "cosmiklabs/brand",
-    "tag": "v0.12.0",
-    "commit": "5c62fc7e1bd012a89061142d87ad64947ae6edd9",
+    "tag": "v0.12.1",
+    "commit": "71fcd97f6342090f7b189e333a04a94af0d32d02",
     "directory": "vendor/brand",
     "lock": "vendor/brand/brand.lock.json"
   },
@@ -96,7 +96,7 @@
       },
       "status": "Approved (owner, 2026-10-17)",
       "editable": true,
-      "sha256": "3d3b5fa5d57b224a3b366d2a924bccfc7bb42cf4c514e0a8c77d4c9c9339b137"
+      "sha256": "258bcca311da018973946f7e6e4578c121a6453eb3a5432edae57f5c121cc1a3"
     },
     {
       "path": "tokens/tectra.css",
@@ -107,7 +107,7 @@
       },
       "status": "generated from tokens/family.json by the vendored family build; approved (owner, 2026-10-17)",
       "generated_by": "vendor/brand/scripts/family.mjs",
-      "sha256": "a84d76fd5cb2453e4f94f2acab75b58135ff70a3bd34adb5c70a7912edc39468"
+      "sha256": "0b52965b309a2cd881a0c39403430db12f7691521971499d4b8e79d5d82e0661"
     },
     {
       "path": "tokens/tectra.json",
@@ -118,7 +118,7 @@
       },
       "status": "generated from tokens/family.json by the vendored family build; approved (owner, 2026-10-17)",
       "generated_by": "vendor/brand/scripts/family.mjs",
-      "sha256": "4b96f780597459cc85708900590b65ebe04b80cd69831035df69c8ab5b7b0841"
+      "sha256": "786ed1a0beac62cedb80b6b552da57a8a1db482ba2c8153961708e1a42f74446"
     },
     {
       "path": "tokens/tectra.tokens.json",
@@ -129,7 +129,7 @@
       },
       "status": "generated from tokens/family.json by the vendored family build; approved (owner, 2026-10-17)",
       "generated_by": "vendor/brand/scripts/family.mjs",
-      "sha256": "ac2beb1aec026f11db713e27515db737748723bc6a2f77964f9faf9ab08f1310"
+      "sha256": "96857e08aa5daedb9beb151fd53347b5af7c8ecafb5cf652490be0e7d20e6eeb"
     },
     {
       "path": "tokens/tectra_tokens.rs",
@@ -140,7 +140,7 @@
       },
       "status": "generated from tokens/family.json by the vendored family build; approved (owner, 2026-10-17)",
       "generated_by": "vendor/brand/scripts/family.mjs",
-      "sha256": "344936e48141817ea16e05514abfc20386b7c0821518415085e8bef42e840220"
+      "sha256": "b37f64717966e37983030074cfc0eafbf47d996a419dc6cbe53288ae801fd094"
     }
   ],
   "tectra_identity": {
@@ -397,7 +397,7 @@
       },
       "status": "Approved (owner, 2026-10-17)",
       "editable": true,
-      "sha256": "64c1271a639a748d348ced0e067190d35e35ec48fb5e54c71d80a9bb19a09993"
+      "sha256": "b3f2a2890d67da16cd90c014eb44fc2e0cd11ce7cd9ec3e100178c04163cc550"
     },
     {
       "path": "specimen.html",
@@ -427,7 +427,7 @@
       },
       "status": "validation record",
       "editable": true,
-      "sha256": "6ba1338332f8fe80bbd2b580226ad463bdf3ce0ec6a30efe35149c0412b13b86"
+      "sha256": "29e4f16c346392f7f6a414f3da2bf90982644adfbcf3b14f917960c9033d5f92"
     },
     {
       "path": "LICENSE.md",
@@ -437,7 +437,7 @@
       },
       "status": "licence terms derived from cosmiklabs/brand LICENSE.md",
       "editable": true,
-      "sha256": "ff1ce1c63e7899108409bb0b2a34e9b12781ebb6a6ceeac589729f1b925f037e"
+      "sha256": "ecfedde9cf0988868479a33542f4464269e098519ec84cefabbfe34694c74f4b"
     },
     {
       "path": "CHANGELOG.md",
@@ -447,7 +447,7 @@
       },
       "status": "release history",
       "editable": true,
-      "sha256": "a09d41543582d110e9451bae28797421003bb7a60317dd271c8d34fde512e372"
+      "sha256": "782bc8ff09913d4ffcb213e852e8bf19c705870a9316172224e27320a974f179"
     }
   ],
   "distribution": {
@@ -455,15 +455,15 @@
     "files": [
       {
         "path": "CHANGELOG.md",
-        "sha256": "a09d41543582d110e9451bae28797421003bb7a60317dd271c8d34fde512e372"
+        "sha256": "782bc8ff09913d4ffcb213e852e8bf19c705870a9316172224e27320a974f179"
       },
       {
         "path": "LICENSE.md",
-        "sha256": "ff1ce1c63e7899108409bb0b2a34e9b12781ebb6a6ceeac589729f1b925f037e"
+        "sha256": "ecfedde9cf0988868479a33542f4464269e098519ec84cefabbfe34694c74f4b"
       },
       {
         "path": "README.md",
-        "sha256": "64c1271a639a748d348ced0e067190d35e35ec48fb5e54c71d80a9bb19a09993"
+        "sha256": "b3f2a2890d67da16cd90c014eb44fc2e0cd11ce7cd9ec3e100178c04163cc550"
       },
       {
         "path": "assets/latch.source.json",
@@ -519,27 +519,27 @@
       },
       {
         "path": "tokens/family.json",
-        "sha256": "3d3b5fa5d57b224a3b366d2a924bccfc7bb42cf4c514e0a8c77d4c9c9339b137"
+        "sha256": "258bcca311da018973946f7e6e4578c121a6453eb3a5432edae57f5c121cc1a3"
       },
       {
         "path": "tokens/tectra.css",
-        "sha256": "a84d76fd5cb2453e4f94f2acab75b58135ff70a3bd34adb5c70a7912edc39468"
+        "sha256": "0b52965b309a2cd881a0c39403430db12f7691521971499d4b8e79d5d82e0661"
       },
       {
         "path": "tokens/tectra.json",
-        "sha256": "4b96f780597459cc85708900590b65ebe04b80cd69831035df69c8ab5b7b0841"
+        "sha256": "786ed1a0beac62cedb80b6b552da57a8a1db482ba2c8153961708e1a42f74446"
       },
       {
         "path": "tokens/tectra.tokens.json",
-        "sha256": "ac2beb1aec026f11db713e27515db737748723bc6a2f77964f9faf9ab08f1310"
+        "sha256": "96857e08aa5daedb9beb151fd53347b5af7c8ecafb5cf652490be0e7d20e6eeb"
       },
       {
         "path": "tokens/tectra_tokens.rs",
-        "sha256": "344936e48141817ea16e05514abfc20386b7c0821518415085e8bef42e840220"
+        "sha256": "b37f64717966e37983030074cfc0eafbf47d996a419dc6cbe53288ae801fd094"
       },
       {
         "path": "validation.md",
-        "sha256": "6ba1338332f8fe80bbd2b580226ad463bdf3ce0ec6a30efe35149c0412b13b86"
+        "sha256": "29e4f16c346392f7f6a414f3da2bf90982644adfbcf3b14f917960c9033d5f92"
       },
       {
         "path": "vendor/brand/LICENSE.md",
@@ -547,7 +547,7 @@
       },
       {
         "path": "vendor/brand/brand.lock.json",
-        "sha256": "c91dd5b33b9593bf131150e667ae32e14999e226557baed7ffcc207f03afa3ca"
+        "sha256": "b736e310eb23a75806e039c4d5673ec19cad8005f82e80f338cd2819b6d88cc3"
       },
       {
         "path": "vendor/brand/fonts/desktop/IBMPlexMono-Regular.ttf",
@@ -639,7 +639,7 @@
       },
       {
         "path": "vendor/brand/kits/cosmik/components/controls.css",
-        "sha256": "0051dcf3e55097266cc473896d59b4e48973ee88f55a2daec97160ec4752ae19"
+        "sha256": "cb6912b62f341b6844ebc6ef02cd98a9a39393b40e829d80cee342d9a4cd9d90"
       },
       {
         "path": "vendor/brand/kits/cosmik/tokens/cosmik.css",
@@ -663,7 +663,7 @@
       },
       {
         "path": "vendor/brand/package.json",
-        "sha256": "99604341d97afa1d4e9f92f90270e9b8583e22c53ff9cd9d130c2dac74fb65a6"
+        "sha256": "2c7741423924a3891b7e57b3b5103d3b0a42f97c0a804b0184109482f7a68c2d"
       },
       {
         "path": "vendor/brand/scripts/family.mjs",
