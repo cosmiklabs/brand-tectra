@@ -1,6 +1,6 @@
 {
   "name": "@cosmiklabs/brand-tectra",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "private": true,
   "description": "Tectra family of the Cosmik brand: tokens, the Latch marks and the Tectra guide, built on a pinned cosmiklabs/brand release.",
   "repository": {

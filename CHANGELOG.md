@@ -3,6 +3,22 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.5.2 · 25 October 2026
+
+- **Selection is teal again.** Since the shared controls took over Tectra's
+  selected controls, they used Tectra's `selected` role, which was its ink
+  (`#142925` light, `#EDF4F3` dark), so selected toolbar tools and segment options
+  turned into near-black or pale pills and lost the teal the guide gives selected
+  emphasis. `selected` is now Tectra's accent in both modes (`#126B5E` light,
+  `#71D6C3` dark), with `on-selected` Tectra's near-white `#F2F6F5` (light) and
+  dark ink `#0F1719` (dark). On-selected on selected: 5.86:1 light, 10.47:1 dark;
+  selected against the bg, surface and raised roles 5.20–6.38:1 light and
+  7.84–10.47:1 dark, and against each glass tone over its band 3.12:1 light and
+  4.79:1 dark. The selection bar is drawn in the on-selected colour, so it holds
+  the same contrast. Focus is the same teal; its ring stays offset from the
+  control, so a focused selection still shows a gap between fill and ring.
+  The unused `tectra-*-selected` primitives are removed.
+
 ## 0.5.1 · 25 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.15.1** (commit

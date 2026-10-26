@@ -1,6 +1,6 @@
 {
   "name": "Cosmik · Tectra",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "status": "Approved — 17 October 2026; angle-only Latch approved",
   "family": "tectra",
   "extends": "Cosmik baseline 0.10.1",
@@ -54,7 +54,6 @@
     "tectra-dark-link-hover": "#71D6C3",
     "tectra-dark-link-active": "#EDF4F3",
     "tectra-dark-on-selected": "#0F1719",
-    "tectra-dark-selected": "#EDF4F3",
     "tectra-dark-action-primary": "#71D6C3",
     "tectra-dark-action-primary-hover": "#92E5D4",
     "tectra-dark-action-primary-active": "#B3EFE3",
@@ -84,7 +83,6 @@
     "tectra-light-link-hover": "#126B5E",
     "tectra-light-link-active": "#142925",
     "tectra-light-on-selected": "#F2F6F5",
-    "tectra-light-selected": "#142925",
     "tectra-light-action-primary": "#126B5E",
     "tectra-light-action-primary-hover": "#0D5B50",
     "tectra-light-action-primary-active": "#084B41",
@@ -121,7 +119,7 @@
       "link-hover": "#71D6C3",
       "link-active": "#EDF4F3",
       "on-selected": "#0F1719",
-      "selected": "#EDF4F3",
+      "selected": "#71D6C3",
       "action-primary": "#71D6C3",
       "action-primary-hover": "#92E5D4",
       "action-primary-active": "#B3EFE3",
@@ -167,7 +165,7 @@
       "link-hover": "#126B5E",
       "link-active": "#142925",
       "on-selected": "#F2F6F5",
-      "selected": "#142925",
+      "selected": "#126B5E",
       "action-primary": "#126B5E",
       "action-primary-hover": "#0D5B50",
       "action-primary-active": "#084B41",
@@ -215,7 +213,7 @@
       "link-hover": "tectra-dark-link-hover",
       "link-active": "tectra-dark-link-active",
       "on-selected": "tectra-dark-on-selected",
-      "selected": "tectra-dark-selected",
+      "selected": "tectra-dark-accent",
       "action-primary": "tectra-dark-action-primary",
       "action-primary-hover": "tectra-dark-action-primary-hover",
       "action-primary-active": "tectra-dark-action-primary-active",
@@ -261,7 +259,7 @@
       "link-hover": "tectra-light-link-hover",
       "link-active": "tectra-light-link-active",
       "on-selected": "tectra-light-on-selected",
-      "selected": "tectra-light-selected",
+      "selected": "tectra-light-accent",
       "action-primary": "tectra-light-action-primary",
       "action-primary-hover": "tectra-light-action-primary-hover",
       "action-primary-active": "tectra-light-action-primary-active",
@@ -639,11 +637,6 @@
         "srgb": [0.058824, 0.090196, 0.098039, 1],
         "linear": [0.004777, 0.008568, 0.009721, 1]
       },
-      "tectra-dark-selected": {
-        "hex": "#EDF4F3",
-        "srgb": [0.929412, 0.956863, 0.952941, 1],
-        "linear": [0.846873, 0.904661, 0.896269, 1]
-      },
       "tectra-dark-action-primary": {
         "hex": "#71D6C3",
         "srgb": [0.443137, 0.839216, 0.764706, 1],
@@ -788,11 +781,6 @@
         "hex": "#F2F6F5",
         "srgb": [0.94902, 0.964706, 0.960784, 1],
         "linear": [0.887923, 0.921582, 0.913099, 1]
-      },
-      "tectra-light-selected": {
-        "hex": "#142925",
-        "srgb": [0.078431, 0.160784, 0.145098, 1],
-        "linear": [0.006995, 0.022174, 0.0185, 1]
       },
       "tectra-light-action-primary": {
         "hex": "#126B5E",
@@ -963,9 +951,9 @@
           "linear": [0.004777, 0.008568, 0.009721, 1]
         },
         "selected": {
-          "hex": "#EDF4F3",
-          "srgb": [0.929412, 0.956863, 0.952941, 1],
-          "linear": [0.846873, 0.904661, 0.896269, 1]
+          "hex": "#71D6C3",
+          "srgb": [0.443137, 0.839216, 0.764706, 1],
+          "linear": [0.165132, 0.672443, 0.545724, 1]
         },
         "action-primary": {
           "hex": "#71D6C3",
@@ -1185,9 +1173,9 @@
           "linear": [0.887923, 0.921582, 0.913099, 1]
         },
         "selected": {
-          "hex": "#142925",
-          "srgb": [0.078431, 0.160784, 0.145098, 1],
-          "linear": [0.006995, 0.022174, 0.0185, 1]
+          "hex": "#126B5E",
+          "srgb": [0.070588, 0.419608, 0.368627, 1],
+          "linear": [0.006049, 0.147027, 0.111932, 1]
         },
         "action-primary": {
           "hex": "#126B5E",

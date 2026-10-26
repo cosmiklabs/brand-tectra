@@ -5,6 +5,18 @@ The last all-kit browser and integrity results, from when Tectra lived in `cosmi
 supersedes the historical browser-execution blocker below. Approval and supplied
 assets are described in the [family guide](README.md).
 
+## 0.5.2 — 25 October 2026
+
+Selection returned to Tectra's teal. Run on macOS with Node.js 24.22.0:
+`npm run build`, `node scripts/build.mjs --check` from the release commit and
+`npm run check` pass (`family.mjs check .` with 146 pairs, 31 tests); `vendor.mjs
+verify vendor/brand --release` passes. Selected pairs: on-selected 5.86:1 light and
+10.47:1 dark; selected against bg, surface and raised 5.20–6.38:1 light and
+7.84–10.47:1 dark; against glass over each tone's band 3.12:1 light and 4.79:1
+dark. Rendered in the Tectra app at 1440 px in both themes and at 320 px touch
+(light): selected tools, camera mode and segment options read as teal fills with
+their bar.
+
 ## 0.5.1 — 25 October 2026
 
 Foundation re-vendored from `cosmiklabs/brand` v0.15.1
