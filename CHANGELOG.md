@@ -3,6 +3,24 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.6.0 · 26 October 2026
+
+- **Foundation `cosmiklabs/brand` v0.16.0** (commit
+  `160f73268fb2307156e580d6fa30c99ef93a2e39`): glass keeps the theme's tone and is
+  legible over any backdrop through a per-tone backdrop filter (dark
+  `contrast(0.75) brightness(0.5)`, light `contrast(0.5) brightness(1.35)`). The
+  tone threshold and hysteresis are gone. The baseline token version is now
+  0.11.0, so `extends` is `"Cosmik baseline 0.11.0"`.
+- **Tectra glass tint.** The dark tone's `tectra-dark-glass` drops from 60 % to
+  38 % (`#17212560`), the most translucent value that passes the new any-backdrop
+  contract with a small margin (at 36 % quiet text on the pressed tint is
+  4.54:1). The light tone keeps the baseline's tint, now 56 %. Over any backdrop:
+  dark text 7.09:1, muted 5.33:1, pressed text 4.63:1, focus and selection
+  4.56:1; light text 7.46:1, muted 5.21:1, pressed text 5.78:1, focus and
+  selection 3.11:1. Scene kept behind the glass (composite luminance, brightest /
+  darkest content): dark 0.083 / 0.008 (2.30:1), light 1.0 / 0.462 (2.05:1).
+- **Guide.** Glass follows the theme; do not switch tones with the work.
+
 ## 0.5.2 · 25 October 2026
 
 - **Selection is teal again.** Since the shared controls took over Tectra's

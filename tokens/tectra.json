@@ -1,9 +1,9 @@
 {
   "name": "Cosmik · Tectra",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "status": "Approved — 17 October 2026; angle-only Latch approved",
   "family": "tectra",
-  "extends": "Cosmik baseline 0.10.1",
+  "extends": "Cosmik baseline 0.11.0",
   "extensionRoles": [
     "accent"
   ],
@@ -28,8 +28,8 @@
     "paper-shade": "#EFEEE9",
     "scrim-dark": "#000000B8",
     "scrim-light": "#0000007A",
-    "glass-dark": "#12121299",
-    "glass-light": "#FFFFFF99",
+    "glass-dark": "#12121250",
+    "glass-light": "#FFFFFF8F",
     "muted-glass-dark": "#C8C8C8",
     "muted-glass-light": "#454545",
     "sheen-white": "#FFFFFFA6",
@@ -98,7 +98,7 @@
     "tectra-light-status-bg": "#E0EAE7",
     "tectra-light-status-border": "#657F78",
     "tectra-light-accent": "#126B5E",
-    "tectra-dark-glass": "#17212599",
+    "tectra-dark-glass": "#17212560",
     "tectra-light-glass-muted": "#2E423E",
     "tectra-dark-glass-muted": "#C9D7D3",
     "tectra-dark-glass-sheen": "#EDF4F3A6",
@@ -143,7 +143,7 @@
       "ornament-text": "#414141",
       "media-placeholder": "#111111",
       "scrim": "#000000B8",
-      "glass": "#17212599",
+      "glass": "#17212560",
       "glass-border": "#344744",
       "glass-muted": "#C9D7D3",
       "glass-sheen": "#EDF4F3A6",
@@ -189,7 +189,7 @@
       "ornament-text": "#C6C5C0",
       "media-placeholder": "#E8E7E3",
       "scrim": "#0000007A",
-      "glass": "#FFFFFF99",
+      "glass": "#FFFFFF8F",
       "glass-border": "#C2D1CC",
       "glass-muted": "#2E423E",
       "glass-sheen": "#FFFFFFF2",
@@ -409,9 +409,15 @@
   "glass": {
     "blur": "24px",
     "saturation": 1.4,
-    "toneThreshold": 0.2,
-    "toneHysteresis": 0.05,
-    "sheenAngle": 160
+    "sheenAngle": 160,
+    "dark": {
+      "contrast": 0.75,
+      "brightness": 0.5
+    },
+    "light": {
+      "contrast": 0.5,
+      "brightness": 1.35
+    }
   },
   "native": {
     "description": "Values for non-browser consumers (desktop, game UI, design tools). Lengths are logical px at a 16 px root; letterSpacing is a fraction of the font size; layout.line is a measure in characters; easing is cubic-bezier control points [x1, y1, x2, y2]; colours give hex, straight-alpha sRGB floats [r, g, b, a] and linear-light floats.",
@@ -508,14 +514,14 @@
         "linear": [0, 0, 0, 0.478431]
       },
       "glass-dark": {
-        "hex": "#12121299",
-        "srgb": [0.070588, 0.070588, 0.070588, 0.6],
-        "linear": [0.006049, 0.006049, 0.006049, 0.6]
+        "hex": "#12121250",
+        "srgb": [0.070588, 0.070588, 0.070588, 0.313725],
+        "linear": [0.006049, 0.006049, 0.006049, 0.313725]
       },
       "glass-light": {
-        "hex": "#FFFFFF99",
-        "srgb": [1, 1, 1, 0.6],
-        "linear": [1, 1, 1, 0.6]
+        "hex": "#FFFFFF8F",
+        "srgb": [1, 1, 1, 0.560784],
+        "linear": [1, 1, 1, 0.560784]
       },
       "muted-glass-dark": {
         "hex": "#C8C8C8",
@@ -858,9 +864,9 @@
         "linear": [0.006049, 0.147027, 0.111932, 1]
       },
       "tectra-dark-glass": {
-        "hex": "#17212599",
-        "srgb": [0.090196, 0.129412, 0.145098, 0.6],
-        "linear": [0.008568, 0.015209, 0.0185, 0.6]
+        "hex": "#17212560",
+        "srgb": [0.090196, 0.129412, 0.145098, 0.376471],
+        "linear": [0.008568, 0.015209, 0.0185, 0.376471]
       },
       "tectra-light-glass-muted": {
         "hex": "#2E423E",
@@ -1071,9 +1077,9 @@
           "linear": [0, 0, 0, 0.721569]
         },
         "glass": {
-          "hex": "#17212599",
-          "srgb": [0.090196, 0.129412, 0.145098, 0.6],
-          "linear": [0.008568, 0.015209, 0.0185, 0.6]
+          "hex": "#17212560",
+          "srgb": [0.090196, 0.129412, 0.145098, 0.376471],
+          "linear": [0.008568, 0.015209, 0.0185, 0.376471]
         },
         "glass-border": {
           "hex": "#344744",
@@ -1293,9 +1299,9 @@
           "linear": [0, 0, 0, 0.478431]
         },
         "glass": {
-          "hex": "#FFFFFF99",
-          "srgb": [1, 1, 1, 0.6],
-          "linear": [1, 1, 1, 0.6]
+          "hex": "#FFFFFF8F",
+          "srgb": [1, 1, 1, 0.560784],
+          "linear": [1, 1, 1, 0.560784]
         },
         "glass-border": {
           "hex": "#C2D1CC",
@@ -1479,9 +1485,15 @@
     "glass": {
       "blurPx": 24,
       "saturation": 1.4,
-      "toneThreshold": 0.2,
-      "toneHysteresis": 0.05,
-      "sheenAngleDeg": 160
+      "sheenAngleDeg": 160,
+      "dark": {
+        "contrast": 0.75,
+        "brightness": 0.5
+      },
+      "light": {
+        "contrast": 0.5,
+        "brightness": 1.35
+      }
     }
   }
 }

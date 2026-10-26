@@ -1,9 +1,26 @@
 # Tectra theme validation
 
 The last all-kit browser and integrity results, from when Tectra lived in `cosmiklabs/brand`, are recorded in
-[reference validation](https://github.com/cosmiklabs/brand/blob/v0.15.1/specimens/validation.md). The 23 October 2026 run
+[reference validation](https://github.com/cosmiklabs/brand/blob/v0.16.0/specimens/validation.md). The 23 October 2026 run
 supersedes the historical browser-execution blocker below. Approval and supplied
 assets are described in the [family guide](README.md).
+
+## 0.6.0 — 26 October 2026
+
+Foundation re-vendored from `cosmiklabs/brand` v0.16.0
+(160f73268fb2307156e580d6fa30c99ef93a2e39), with Tectra's dark glass tint lowered to
+38 %. Run on macOS with Node.js 24.22.0: `npm run build`, `node scripts/build.mjs
+--check` from the release commit and `npm run check` pass (`family.mjs check .`
+with 146 pairs, now over any backdrop, 36 tests); `vendor.mjs verify vendor/brand
+--release` passes. Token-check worst cases over 4,913 backdrops through each tone's
+filter: dark text 7.09:1, muted 5.33:1, pressed text 4.63:1, focus/selection
+4.56:1; light text 7.46:1, muted 5.21:1, focus/selection 3.11:1. Measured from
+pixels in headless Chrome for Testing 156 (Tectra tokens and the foundation's
+controls, `.c-glass` over white, black, the primaries, mid grey and Tectra's teals,
+both themes): dark text 7.06:1, muted 5.30:1, focus 4.54:1 (worst over white);
+light text 7.46:1, muted 5.21:1, focus 3.11:1 (worst over black). Composite
+luminance behind the glass: dark 0.008–0.083, light 0.462–1.0. `specimen.html`
+has no glass and renders unchanged at 1280 px in both themes.
 
 ## 0.5.2 — 25 October 2026
 

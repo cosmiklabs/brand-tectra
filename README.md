@@ -2,7 +2,7 @@
 
 This repository is the Tectra family of the Cosmik brand: its tokens, the Latch
 marks, the offline review board and this guide. It builds on the Cosmik foundation
-from [`cosmiklabs/brand`](https://github.com/cosmiklabs/brand) **v0.15.1**, vendored
+from [`cosmiklabs/brand`](https://github.com/cosmiklabs/brand) **v0.16.0**, vendored
 unchanged at `vendor/brand/` and pinned by `vendor/brand/brand.lock.json` (tag,
 commit and SHA-256 of every file). The family's tokens are generated and checked by
 the vendored `vendor/brand/scripts/family.mjs`, so the family contract, baseline
@@ -39,7 +39,7 @@ Follow the shared [voice and organisation wording guidance](vendor/brand/guide/v
 
 Consume semantic values from [the family tokens](tokens/family.json), never copied hex values. Light and dark roles are complete after generation. Teal marks focus, primary actions and selected emphasis; it does not mean success. Status uses words and structure. The family inherits neutral status roles; it does not invent approval, warning or error colour semantics.
 
-Glass (the shared `glass`, `glass-border` and `glass-muted` roles) is for controls floating over the user's work, such as viewport toolbars and the menus opened from them; panels, rails, dialogs and reading content stay solid. Its tone follows the work behind it (`data-glass-tone`, chosen against the foundation's tone threshold). Its edge is a sheen of light, not a border. Tectra's dark tone is its own dark surface at 60 % with a mineral-white sheen; its light tone keeps the baseline white tint and highlight, with a faint lower edge in Tectra's dark and darker muted text. The tint never recolours the work beyond the shared blur and saturation.
+Glass (the shared `glass`, `glass-border` and `glass-muted` roles) is for controls floating over the user's work, such as viewport toolbars and the menus opened from them; panels, rails, dialogs and reading content stay solid. Glass keeps the theme's tone, dark glass in the dark theme and light glass in the light theme, over whatever work is behind it; never switch tones with the work, which flickers as the view moves. Legibility comes from the foundation's backdrop filter (the dark tone dims the work and lowers its contrast, the light tone brightens it), so the work still shows through. Its edge is a sheen of light, not a border. Tectra's dark tone is its own dark surface at 38 % with a mineral-white sheen; its light tone keeps the baseline white tint (56 %) and highlight, with a faint lower edge in Tectra's dark and darker muted text. The tint never recolours the work beyond the shared blur, saturation and tone filter.
 
 Inter serves both headings and reading/interface text. IBM Plex Mono serves short dimensions, identifiers and technical labels, not paragraphs. No new font is required. Preserve existing font notices. Spacing, controls, radii, breakpoints and motion remain the baseline's.
 
@@ -56,8 +56,8 @@ Follow the shared [interface](vendor/brand/guide/interface.md), [motion](vendor/
 ## Deliverables and pending assets
 
 - [Offline review board](specimen.html): two-mode visual direction and illustrative applications.
-- [Component reference](https://github.com/cosmiklabs/brand/blob/v0.15.1/specimens/components.html) in `cosmiklabs/brand`: the shared controls Tectra inherits. Load `tokens/tectra.css` and apply `data-family="tectra"` to inspect them in Tectra.
-- Generated CSS, JSON, DTCG and Rust under [tokens/](tokens/); use the [consumer guide](https://github.com/cosmiklabs/brand/blob/v0.15.1/kits/README.md) for integration.
+- [Component reference](https://github.com/cosmiklabs/brand/blob/v0.16.0/specimens/components.html) in `cosmiklabs/brand`: the shared controls Tectra inherits. Load `tokens/tectra.css` and apply `data-family="tectra"` to inspect them in Tectra.
+- Generated CSS, JSON, DTCG and Rust under [tokens/](tokens/); use the [consumer guide](https://github.com/cosmiklabs/brand/blob/v0.16.0/kits/README.md) for integration.
 - [Validation record](validation.md).
 
 The symbol and supplied horizontal lockup are approved for integration. Platform icons, banners, identity animation and an optical small-size redraw remain separate future deliverables. Generate canonical variants with `node scripts/build-assets.mjs` (or `npm run build`); Inter's existing font notice continues to apply.
