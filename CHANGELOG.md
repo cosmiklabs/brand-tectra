@@ -3,6 +3,20 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.6.1 · 26 October 2026
+
+- **Licence.** `LICENSE.md` names COSMIK LABS, LLC as the holder of the copyright
+  in this repository's own material and of the Cosmik marks, including the Tectra
+  marks, in place of "not a company or other legal entity", the contributors and
+  the organisation's owner. The MIT notice reads "Copyright (c) 2026 COSMIK LABS,
+  LLC". Sections, grants and permissions are otherwise unchanged. The change
+  applies from this release.
+- **Foundation `cosmiklabs/brand` v0.16.1** (commit
+  `4da5ba28b1c32cf6b717ca1cb579b6c6d237ec3d`): the same licence change for the
+  foundation, and its identity and voice guides name the legal entity. No token,
+  mark or control changes; `extends` stays `"Cosmik baseline 0.11.0"`. Generated
+  tokens differ only in the version and the provenance header.
+
 ## 0.6.0 · 26 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.16.0** (commit
