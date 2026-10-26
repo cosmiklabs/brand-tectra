@@ -50,7 +50,7 @@ test('family check rejects an extends that does not name the vendored baseline',
  f.edit(s=>{s.extends='Cosmik baseline 0.4.0';});
  const result=f.run('check');
  assert.notEqual(result.status,0);
- assert.match(result.stderr,/provides "Cosmik baseline 0\.9\.0"/);
+ assert.match(result.stderr,/provides "Cosmik baseline 0\.10\.0"/);
 });
 
 test('a late family failure preserves all existing generated files',t=>{

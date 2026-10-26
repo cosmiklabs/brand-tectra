@@ -1,8 +1,8 @@
 {
   "id": "tectra",
   "name": "Tectra",
-  "extends": "Cosmik baseline 0.9.0",
-  "version": "0.4.0",
+  "extends": "Cosmik baseline 0.10.0",
+  "version": "0.5.0",
   "status": "Approved \u2014 17 October 2026; angle-only Latch approved",
   "description": "A mineral-and-teal family for Tectra: a planned agent-driven authoring workflow from envisioning and planning through construction, rendering and review. Art direction belongs to the user. All utility, layout and motion rules inherit the Cosmik baseline.",
   "proposals": [
@@ -71,10 +71,11 @@
     "tectra-light-status-border": "#657F78",
     "tectra-light-accent": "#126B5E",
     "tectra-dark-glass": "#17212599",
-    "tectra-dark-glass-border": "#F2F6F5",
-    "tectra-light-glass-border": "#0F1719",
     "tectra-light-glass-muted": "#2E423E",
-    "tectra-dark-glass-muted": "#C9D7D3"
+    "tectra-dark-glass-muted": "#C9D7D3",
+    "tectra-dark-glass-sheen": "#EDF4F3A6",
+    "tectra-dark-glass-sheen-low": "#EDF4F333",
+    "tectra-light-glass-sheen-low": "#0F171940"
   },
   "semantic": {
     "dark": {
@@ -109,8 +110,10 @@
       "status-bg": "tectra-dark-status-bg",
       "status-border": "tectra-dark-status-border",
       "glass": "tectra-dark-glass",
-      "glass-border": "tectra-dark-glass-border",
-      "glass-muted": "tectra-dark-glass-muted"
+      "glass-border": "tectra-dark-divider",
+      "glass-muted": "tectra-dark-glass-muted",
+      "glass-sheen": "tectra-dark-glass-sheen",
+      "glass-sheen-low": "tectra-dark-glass-sheen-low"
     },
     "light": {
       "bg": "tectra-light-bg",
@@ -139,8 +142,9 @@
       "status-fg": "tectra-light-status-fg",
       "status-bg": "tectra-light-status-bg",
       "status-border": "tectra-light-status-border",
-      "glass-border": "tectra-light-glass-border",
-      "glass-muted": "tectra-light-glass-muted"
+      "glass-border": "tectra-light-divider",
+      "glass-muted": "tectra-light-glass-muted",
+      "glass-sheen-low": "tectra-light-glass-sheen-low"
     }
   },
   "extensions": {

@@ -3,6 +3,21 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.5.0 · 25 October 2026
+
+- **Foundation `cosmiklabs/brand` v0.15.0** (commit
+  `240edbe4bf69f1af36be30c60dc80aa35f29b56d`). Glass has no solid border: its
+  edge is a 1px sheen of light caught by the rim (`glass-sheen` at the top left
+  fading to `glass-sheen-low` at the bottom right), and the panel edge is
+  decorative. `glass-border` is now the plain border of the solid fallbacks. The
+  baseline token version is now 0.10.0, so `extends` is
+  `"Cosmik baseline 0.10.0"`. See the foundation's changelog.
+- **Tectra sheen.** Dark tone: Tectra's mineral white `#EDF4F3` at 65 % fading to
+  20 %. Light tone: the baseline white highlight with a lower edge in Tectra's
+  dark `#0F1719` at 25 %. Solid fallbacks use Tectra's dividers (`#344744` dark,
+  `#C2D1CC` light) as the plain border. Text, muted text, focus and selection over
+  each tone's band are unchanged from 0.4.0.
+
 ## 0.4.0 · 25 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.14.0** (commit

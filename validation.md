@@ -1,9 +1,21 @@
 # Tectra theme validation
 
 The last all-kit browser and integrity results, from when Tectra lived in `cosmiklabs/brand`, are recorded in
-[reference validation](https://github.com/cosmiklabs/brand/blob/v0.14.0/specimens/validation.md). The 23 October 2026 run
+[reference validation](https://github.com/cosmiklabs/brand/blob/v0.15.0/specimens/validation.md). The 23 October 2026 run
 supersedes the historical browser-execution blocker below. Approval and supplied
 assets are described in the [family guide](README.md).
+
+## 0.5.0 — 25 October 2026
+
+Foundation re-vendored from `cosmiklabs/brand` v0.15.0
+(240edbe4bf69f1af36be30c60dc80aa35f29b56d), with Tectra sheen colours. Run on macOS
+with Node.js 24.22.0: `npm run build`, `node scripts/build.mjs --check` from the
+release commit and `npm run check` pass (`vendor.mjs verify vendor/brand`,
+`family.mjs check .` with 132 contrast pairs, 31 tests); `vendor.mjs verify
+vendor/brand --release` against the v0.15.0 checkout passes. The foundation's
+component reference was rendered with `tokens/tectra.css` and
+`data-family="tectra"` at 1280 px in both themes: the sheen reads as light on the
+rim in both tones and text and selection stay clear.
 
 ## 0.4.0 — 25 October 2026
 
