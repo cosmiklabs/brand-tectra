@@ -3,6 +3,21 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.5.1 · 25 October 2026
+
+- **Foundation `cosmiklabs/brand` v0.15.1** (commit
+  `31cd0202eb0691c32e0c08b81a94c209c9a1c2b4`): pressed is a deeper step of
+  hover, glass hover and pressed tint the glass, and the check enforces both. The
+  baseline token version is now 0.10.1, so `extends` is
+  `"Cosmik baseline 0.10.1"`.
+- **Tectra pressed roles.** Three of Tectra's pressed roles ran back towards rest
+  and fail the new check; they now continue past hover. Dark secondary:
+  `#172125` → `#233034` → `#2F3E42` (was `#0F1719`, darker than rest). Dark
+  primary: `#71D6C3` → `#92E5D4` → `#B3EFE3` (was `#50B5A3`). Light secondary:
+  white → `#E0EAE7` → `#CCDAD5` (was `#F2F6F5`, almost rest). The light primary
+  was already a one-way ramp. Pressed against rest / hover: 1.47 / 1.22, 1.35 /
+  1.14, 1.44 / 1.17 and 1.57 / 1.26.
+
 ## 0.5.0 · 25 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.15.0** (commit
