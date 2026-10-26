@@ -3,6 +3,22 @@
 The Tectra family's version is `version` in `tokens/family.json`; this repository's
 `package.json` and `asset-manifest.json` carry the same version. Newest first.
 
+## 0.4.0 · 25 October 2026
+
+- **Foundation `cosmiklabs/brand` v0.14.0** (commit
+  `e5259977583505abb4f593012571a71eaa39ef0a`). Glass is clearer (60 % tint,
+  24px blur, 1.4 saturation) and comes in two tones: `data-glass-tone="dark"`
+  or `"light"` gives a surface that mode's roles, and each tone is checked over
+  the content its tone is for, either side of a published threshold. The
+  baseline token version is now 0.9.0, so `extends` is
+  `"Cosmik baseline 0.9.0"`. See the foundation's changelog.
+- **Tectra glass tones.** Dark: the Tectra dark surface `#172125` at 60 %, a
+  `#F2F6F5` hairline and `#C9D7D3` muted text. Light: the baseline white tint, a
+  `#0F1719` hairline and `#2E423E` muted text (Tectra's light text `#142925` is
+  lighter than the baseline's black, so its muted text must be darker). Over each
+  tone's band: dark text 7.46:1, muted 5.60:1, focus 4.79:1, boundary 3.20:1;
+  light text 7.48:1, muted 5.23:1, focus 3.12:1, boundary 3.46:1.
+
 ## 0.3.0 · 25 October 2026
 
 - **Foundation `cosmiklabs/brand` v0.13.0** (commit

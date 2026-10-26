@@ -1,9 +1,23 @@
 # Tectra theme validation
 
 The last all-kit browser and integrity results, from when Tectra lived in `cosmiklabs/brand`, are recorded in
-[reference validation](https://github.com/cosmiklabs/brand/blob/v0.13.0/specimens/validation.md). The 23 October 2026 run
+[reference validation](https://github.com/cosmiklabs/brand/blob/v0.14.0/specimens/validation.md). The 23 October 2026 run
 supersedes the historical browser-execution blocker below. Approval and supplied
 assets are described in the [family guide](README.md).
+
+## 0.4.0 — 25 October 2026
+
+Foundation re-vendored from `cosmiklabs/brand` v0.14.0
+(e5259977583505abb4f593012571a71eaa39ef0a), with Tectra glass tones. Run on macOS
+with Node.js 24.22.0: `npm run build`, `node scripts/build.mjs --check` from the
+release commit and `npm run check` pass (`vendor.mjs verify vendor/brand`,
+`family.mjs check .` with 136 contrast pairs, 31 tests); `vendor.mjs verify
+vendor/brand --release` against the v0.14.0 checkout passes. Glass over each tone's
+band: dark (luminance 0–0.25) text 7.46:1, muted 5.60:1, focus 4.79:1, boundary
+3.20:1; light (0.15–1) text 7.48:1, muted 5.23:1, focus 3.12:1, boundary 3.46:1.
+The foundation's component reference was rendered with `tokens/tectra.css` and
+`data-family="tectra"` at 1280 px in both themes; both tones read clearly over
+light and dark busy content and the content visibly shows through.
 
 ## 0.3.0 — 25 October 2026
 

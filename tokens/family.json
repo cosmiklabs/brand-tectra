@@ -1,8 +1,8 @@
 {
   "id": "tectra",
   "name": "Tectra",
-  "extends": "Cosmik baseline 0.8.0",
-  "version": "0.3.0",
+  "extends": "Cosmik baseline 0.9.0",
+  "version": "0.4.0",
   "status": "Approved \u2014 17 October 2026; angle-only Latch approved",
   "description": "A mineral-and-teal family for Tectra: a planned agent-driven authoring workflow from envisioning and planning through construction, rendering and review. Art direction belongs to the user. All utility, layout and motion rules inherit the Cosmik baseline.",
   "proposals": [
@@ -70,10 +70,11 @@
     "tectra-light-status-bg": "#E0EAE7",
     "tectra-light-status-border": "#657F78",
     "tectra-light-accent": "#126B5E",
-    "tectra-dark-glass": "#172125D6",
-    "tectra-dark-glass-border": "#CDDAD6",
-    "tectra-light-glass-border": "#22342F",
-    "tectra-light-glass-muted": "#455D57"
+    "tectra-dark-glass": "#17212599",
+    "tectra-dark-glass-border": "#F2F6F5",
+    "tectra-light-glass-border": "#0F1719",
+    "tectra-light-glass-muted": "#2E423E",
+    "tectra-dark-glass-muted": "#C9D7D3"
   },
   "semantic": {
     "dark": {
@@ -109,7 +110,7 @@
       "status-border": "tectra-dark-status-border",
       "glass": "tectra-dark-glass",
       "glass-border": "tectra-dark-glass-border",
-      "glass-muted": "tectra-dark-muted"
+      "glass-muted": "tectra-dark-glass-muted"
     },
     "light": {
       "bg": "tectra-light-bg",
