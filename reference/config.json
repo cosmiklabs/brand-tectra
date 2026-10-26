@@ -1,0 +1,14 @@
+{
+  "id": "tectra",
+  "name": "Tectra",
+  "mark": "Latch",
+  "description": "The Latch identity, mineral surfaces, restrained teal and clean utility typography of the Tectra family.",
+  "identityNote": "The approved Latch keeps its original open geometry with corrected cut angles. Its symbol, horizontal lockup and mineral-teal palette form one identity across Tectra interfaces, adapters and documentation.",
+  "assetNote": "Use the supplied Latch and lockups. Platform icons, an optical small-size redraw and identity animation remain separate future deliverables.",
+  "identity": {
+    "symbolDark": "assets/tectra-latch-dark.svg",
+    "symbolLight": "assets/tectra-latch-light.svg",
+    "lockupDark": "assets/tectra-lockup-dark.svg",
+    "lockupLight": "assets/tectra-lockup-light.svg"
+  }
+}

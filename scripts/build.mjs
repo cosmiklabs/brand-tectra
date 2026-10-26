@@ -26,6 +26,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     run('vendor/brand/scripts/family.mjs', 'build', '.');
     run('scripts/build-assets.mjs');
     run('scripts/manifest.mjs', '--update');
+    run('scripts/build-reference.mjs');
     if (args.includes('--check')) assertCleanTree(root);
   } catch (error) {
     if (error.message && !error.status) console.error(error.message);

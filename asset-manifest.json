@@ -397,7 +397,7 @@
       },
       "status": "Approved (owner, 2026-10-17)",
       "editable": true,
-      "sha256": "6cf3054baed8e2f41f296aa38f66ad4f65d0516222ea86bb70b32bd7906f40c8"
+      "sha256": "96011ce96edc0b689e8373314222bcaecfbc7ca10d4f1cea1a1f6677b1f1cf44"
     },
     {
       "path": "specimen.html",
@@ -463,7 +463,7 @@
       },
       {
         "path": "README.md",
-        "sha256": "6cf3054baed8e2f41f296aa38f66ad4f65d0516222ea86bb70b32bd7906f40c8"
+        "sha256": "96011ce96edc0b689e8373314222bcaecfbc7ca10d4f1cea1a1f6677b1f1cf44"
       },
       {
         "path": "assets/latch.source.json",

@@ -127,3 +127,11 @@ Update `extends` in `tokens/family.json` if the baseline token version changed,
 then review the regenerated tokens and the review board in both themes before
 committing the new lock with the outputs. CI proves the lock against the tag it
 records.
+
+## HTML reference
+
+The complete HTML reference includes this guide, live family typography and color,
+approved downloads, a token browser and pinned shared rules. Run
+`npm run dev:reference` for local preview. See
+[reference setup and Pages publishing](reference/README.md); the presentation
+tooling is shared with Cosmik while this family’s vendored foundation stays unchanged.

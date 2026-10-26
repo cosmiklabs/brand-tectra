@@ -2,3 +2,7 @@
 .local/
 .DS_Store
 node_modules/
+
+# Generated reference and separate, content-locked presentation-tool checkout.
+site/
+.reference-tooling/
