@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Adopted shared narrow metadata/table fixes and a compact title-first source explanation.
+
 - Clarified the product’s conversation, revision and review story; scoped rule-checking and export claims; and made Cosmik a secondary endorsement. Voice & imagery now combines current product guidance with pinned general writing rules.
 
 The Tectra family's version is `version` in `tokens/family.json`; this repository's

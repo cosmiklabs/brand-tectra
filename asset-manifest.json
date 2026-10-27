@@ -447,7 +447,7 @@
       },
       "status": "release history",
       "editable": true,
-      "sha256": "f8fa21e9c2e288b98c9f9d77721ca2a7fc1bf2348fc9de7c7c67d3a6930b18e9"
+      "sha256": "407ade11c06f4edf4e4ec57c7d08d67291c4e767c0bc7d6c5ebc926e325ffb21"
     }
   ],
   "distribution": {
@@ -455,7 +455,7 @@
     "files": [
       {
         "path": "CHANGELOG.md",
-        "sha256": "f8fa21e9c2e288b98c9f9d77721ca2a7fc1bf2348fc9de7c7c67d3a6930b18e9"
+        "sha256": "407ade11c06f4edf4e4ec57c7d08d67291c4e767c0bc7d6c5ebc926e325ffb21"
       },
       {
         "path": "LICENSE.md",
