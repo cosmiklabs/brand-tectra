@@ -15,7 +15,7 @@ Theme approved on 17 October 2026: cool mineral surfaces, restrained teal, clean
 
 ## Identity and hierarchy
 
-The approved **Latch** is the original mark with only its cut angles corrected, accepted on 17 October 2026. Its exact two paths live in `latch.source.json`; do not close its openings, alter its proportions or use the later closed-fit/airy explorations. Use the supplied symbol or horizontal lockup. The lockup pairs the unchanged symbol with outlined Inter SemiBold; it is a typographic label treatment, not a custom-lettered wordmark. Keep the separate “A Cosmik project” endorsement at least 16 px away.
+The approved **Latch** is the original mark with only its cut angles corrected, accepted on 17 October 2026. Its exact two paths live in `latch.source.json`; do not close its openings, alter its proportions or use the later closed-fit/airy explorations. Use the supplied symbol or horizontal lockup. The lockup pairs the unchanged symbol with outlined Inter SemiBold; it is a typographic label treatment, not a custom-lettered wordmark. Keep a separate Cosmik endorsement at least 16 px away; “By Cosmik” suits marketing and “A Cosmik project” suits reference contexts.
 
 Use `tectra-latch-dark.svg` / `tectra-lockup-dark.svg` on dark surfaces and the `light` versions on light surfaces. Black and white variants serve monochrome applications. `currentColor` inherits colour when inlined; an external `<img>` does not inherit page text colour. All exports are transparent. Keep at least 8 source units of clear space around visible artwork (one sixth of the symbol's 48-unit visible width). The lockup's 16-unit symbol/label gap is fixed.
 
@@ -23,17 +23,60 @@ Recommended minimum CSS width: symbol 24 px; horizontal lockup 160 px. At 24 px,
 
 When Tectra content is presented inside a Cosmik organisation surface, the enclosing organisation identity stays baseline. Tectra interfaces use their family kit; browser consumers apply `data-family="tectra"` in either mode. This is identity scoping, not a required header, footer or navigation layout. The kit applies to the family, including its documentation, bindings, adapters and showcase presentation; these are not separate logo systems.
 
-## Marketing emphasis
-
-Lead with what Tectra helps people create and how the intended authoring workflow supports their ideas. Explain envisioning, planning, building and reviewing in plain language, while distinguishing planned workflow from verified capabilities. Keep artistic direction with the creator.
-
-Business-model labels are not the headline, hero badge or primary reason to use the product. Do not frame pricing as its defining feature. Pricing, access and any free-credit allowance remain undecided; do not promise a free tier, credits, a trial or a price. Explain commercial terms separately when they are settled and relevant.
-
 ## Product presentation
 
-Use one Tectra family identity across the product, documentation and interfaces. Leave the user's artistic choices intact. Public copy explains useful outcomes and intended workflow without exposing implementation architecture or repository organisation. Distinguish verified capabilities from plans and avoid implying launch or availability.
+Tectra helps people create and revise 3D structures through conversation. Lead with
+**Create structures for worlds real or imagined.** Explain the concrete workflow
+nearby: describe a structure, inspect the proposed revision, and direct what changes
+next. “Describe the space. Shape what comes next.” is a supporting product line,
+not a Cosmik-wide motto.
 
-Follow the shared [voice and organisation wording guidance](vendor/brand/guide/voice.md). A Tectra-specific line is not a new Cosmik-wide motto or promise.
+### Audience and value
+
+Show a creator developing a structure for a scene or world: changing an opening,
+reworking a roof or refining a material. The distinctive story is a construction
+made of connected parts that can be revised and reviewed. AI assistance explains
+how the person directs it; “AI-powered” alone does not explain its value.
+
+Demonstrate one understandable use case at a time. A first marketing example need
+not define the full product scope. Vary examples over time so the identity does
+not imply only buildings, one architectural style or one game engine. Do not
+promise support for an audience's workflow until the relevant outcome is verified.
+
+### Scope and availability
+
+Describe checked **declared rules**, not a guarantee that a structure “works” in
+every sense. Dimensional examples do not establish building-code compliance,
+structural safety, manufacturing suitability or professional approval. Name the
+rule and show the finding when explaining a check. Preserve the distinction
+between a proposed revision and one the person has accepted.
+
+Do not promise that every edit preserves all other geometry, that an agent always
+succeeds, or that the person will never need another tool. Explain what the person
+can inspect and decide. Exports, integrations and material behavior should be
+named at their tested scope; an export format does not prove compatibility with
+every application that can open it.
+
+Tectra is in development. A working feature in a private build is not public
+availability. Pricing, access and any free-credit allowance remain undecided;
+do not promise a free tier, credits, a trial, a price or a release date. Commercial
+terms belong beside the decision they affect once settled, not in the headline.
+
+### Voice, imagery and next steps
+
+Keep artistic direction with the creator. Write plainly about describing,
+inspecting, revising and exporting. The mineral palette, restrained teal and clear
+typography frame the work without recoloring it or prescribing its style.
+
+Prefer a real revision sequence and representative output. Label prepared examples,
+illustrative diagrams and hypothetical values where they appear. Never present a
+mock conversation or conceptual viewport as a real customer result or app capture.
+
+Tectra leads its marketing, application, documentation and integrations. Use a quiet
+“By Cosmik” in the footer or About context, separate from the product logo. Give
+interested visitors a real product-specific next step: a maintained development
+update or a way to ask about Tectra while access is unavailable. Add “Open app” or
+“Sign in” only when that destination is available to the intended visitor.
 
 ## Colour and type
 

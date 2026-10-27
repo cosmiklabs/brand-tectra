@@ -397,7 +397,7 @@
       },
       "status": "Approved (owner, 2026-10-17)",
       "editable": true,
-      "sha256": "61df79bf91c01626101db48bdc1f765c564f968aed0919784a00ee68986106f1"
+      "sha256": "ee0acad28131d62142b1151e9baa6f038adddb6f653a5db8c6cc4ca72859a205"
     },
     {
       "path": "specimen.html",
@@ -447,7 +447,7 @@
       },
       "status": "release history",
       "editable": true,
-      "sha256": "9ad57d462d5269b1d2fee1e2ea01ef5473930957d365e59851c3971994826c0f"
+      "sha256": "f8fa21e9c2e288b98c9f9d77721ca2a7fc1bf2348fc9de7c7c67d3a6930b18e9"
     }
   ],
   "distribution": {
@@ -455,7 +455,7 @@
     "files": [
       {
         "path": "CHANGELOG.md",
-        "sha256": "9ad57d462d5269b1d2fee1e2ea01ef5473930957d365e59851c3971994826c0f"
+        "sha256": "f8fa21e9c2e288b98c9f9d77721ca2a7fc1bf2348fc9de7c7c67d3a6930b18e9"
       },
       {
         "path": "LICENSE.md",
@@ -463,7 +463,7 @@
       },
       {
         "path": "README.md",
-        "sha256": "61df79bf91c01626101db48bdc1f765c564f968aed0919784a00ee68986106f1"
+        "sha256": "ee0acad28131d62142b1151e9baa6f038adddb6f653a5db8c6cc4ca72859a205"
       },
       {
         "path": "assets/latch.source.json",
